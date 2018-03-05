@@ -2,22 +2,23 @@
 
 //TRATA TODOS CLIQUES EM BOTÕES RECEBIDOS
 function eventos($evento, $senderId, $accessToken){
-
     switch($evento){
       //inicio
       case login:
         sendLogin($senderId, $accessToken);
         break;
       case comecar:
-        menuVincula($senderId, $accessToken);
-        break;
-      case outro:
         menuTipo($senderId, $accessToken);
         break;
+      case outro:
+        menuCampus($senderId, $accessToken, "ead");
+	sleep(3);
+	menuAcesseiCampus($senderId, $accessToken, "ead");
+        break;
       //seleciona cadastro por email
-      case email:
-        sendImage("your-image-link", $senderId, $accessToken);
-        menuTermo($senderId, $accessToken);
+       case emailEad:
+        sendImage("https://scontent.fbsb9-1.fna.fbcdn.net/v/t1.0-9/26804504_2053253148293926_4330529471620623708_n.png?oh=686ed2ba3ce1a1c29a4b5f5e6878a22f&oe=5B206811", $senderId, $accessToken);
+        menuTermo($senderId, $accessToken, "https://campusvirtual.ufla.br/cas/cvchatbot_ead_ufla.php?fbid=".$senderId);
         break;
       case nao_termo:
         tentarNovamente($senderId, $accessToken);
@@ -35,14 +36,11 @@ function eventos($evento, $senderId, $accessToken){
         break;
       //seleciona o tipo de ensino
       case tipo_presencial:
-        menuCampus($senderId, $accessToken, "presencial");
-        sleep(3);
-        menuAcesseiCampus($senderId, $accessToken, "presencial");
+        sendImage("https://scontent.fbsb9-1.fna.fbcdn.net/v/t1.0-9/26804504_2053253148293926_4330529471620623708_n.png?oh=686ed2ba3ce1a1c29a4b5f5e6878a22f&oe=5B206811", $senderId, $accessToken);
+        menuTermo($senderId, $accessToken, "https://campusvirtual.ufla.br/cas/cvchatbot_ufla.php?fbid=".$senderId);
         break;
       case tipo_ead:
-        menuCampus($senderId, $accessToken, "ead");
-        sleep(3);
-        menuAcesseiCampus($senderId, $accessToken, "ead");
+        menuVinculaEad($senderId, $accessToken);
         break;
       //acessa página de login, efetuou login
       //copiar e colar codigo no campo Facebook

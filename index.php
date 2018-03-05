@@ -37,8 +37,8 @@ include "sends.php";
 include "functions.php";
 include "payloads.php";
 
-$hubVerifyToken = "your-password";
-$accessToken = "your-token";
+$hubVerifyToken = "chatbotCV";
+$accessToken = "EAAVKUr1VS74BAMPr6C4MPe0T7OZAn2tNfDzYiaLf2ynOTKZAVNwbvA4ZCPjdNj0FzJAInydhzcG103KbOSMiKacZBYI8RqSsTwFe9AMsiXEFHZCCnxfZBgWCbYqB5jNkWx4eFbJmiP4ZAMj35c7JTx600aYEJgx8LIcVRINQFhiC1HSa9gHZCTeedoRCv0rwqwgZD";
 
 // verificar a senha
 if ($_REQUEST['hub_verify_token'] === $hubVerifyToken) {

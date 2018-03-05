@@ -1,7 +1,7 @@
 <?php
 
 // parametros de verificação
-$hubVerifyToken = "your-password";
+$hubVerifyToken = "chatbotCV";
 $accessToken = "your-token";
 // nome da sua instância Moodle
 $moodleName = "Campus Virtual";
